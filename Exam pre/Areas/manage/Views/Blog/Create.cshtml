@@ -1,0 +1,29 @@
+﻿@model Blog
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input asp-for="Title" class="form-control"  >
+        <span asp-validation-for="Title"></span>
+        
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Description</label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="PublishedBy" class="form-label">PublishedBy</label>
+        <input asp-for="PublishedBy" class="form-control">
+        <span asp-validation-for="PublishedBy"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="FormFile" class="form-label">FormFile</label>
+        <input asp-for="FormFile" class="form-control">
+        <span asp-validation-for="FormFile"></span>
+
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

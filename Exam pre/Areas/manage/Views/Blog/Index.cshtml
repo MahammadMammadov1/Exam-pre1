@@ -1,0 +1,41 @@
+﻿@model List<Blog>
+@{
+    int counter = 0;
+}
+
+<div>
+    <h1>Create Blog</h1>
+    <a asp-controller="blog" asp-action="create" class="btn btn-primary ">Create</a>
+</div>
+
+<table class="table" style="overflow:scroll;max-width:1000px;">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Desc</th>
+            <th scope="col">PublishedBy</th>
+            <th scope="col">ImageUrl</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.Title</td>               
+                <td>@item.Description</td>
+                <td>@item.PublishedBy</td>
+                <td>@item.ImageUrl</td>
+                <td>
+                    <a asp-controller="blog" asp-action="update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
+                    <a asp-controller="blog" asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+</table>
